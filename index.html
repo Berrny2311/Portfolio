@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Portfolio</div>
+            <div class="pommes">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Startseite</a></li>
+                <li><a href="#about" class="nav-link">Über Mich</a></li>
+                <li><a href="#experience" class="nav-link">Werdegang</a></li>
+                <li><a href="#projects" class="nav-link">Technologien</a></li>
+                <li><a href="#learning" class="nav-link">Lernen</a></li>
+                <li><a href="#homelab" class="nav-link">HomeLab</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hallo, ich bin <span class="highlight-gradient">Bernhard Antl</span></h1>
+                <p class="hero-subtitle">Software Developer & Automatisierungstechniker</p>
+                <p class="hero-description">Spezialisiert auf Automatisierung, Roboterprogrammierung und Industrial
+                    Software Solutions mit 10+ Jahren Erfahrung</p>
+                <button class="cta-button" onclick="scrollToSection('experience')">Meinen Werdegang ansehen</button>
+            </div>
+            <div class="hero-animation">
+                <div class="code-block">
+                    <div class="matrix-text" id="matrixText"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über Mich -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Über Mich</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Willkommen auf meinem Portfolio! <br>Ich bin ein engagierter Software Developer und
+                        Automatisierungstechniker mit über 10 Jahren praktischer Erfahrung in der Industrie und
+                        Softwareentwicklung.</p>
+                    <p>Meine Expertise liegt in der Automatisierung von Produktionsprozessen, Roboterprogrammierung und
+                        der Entwicklung von Corporate Softwarelösungen. Ich verfüge über fundierte Kenntnisse in der
+                        Industrieautomation und moderner Softwareentwicklung.</p>
+                    <p>In den letzten drei Jahren habe ich mich als ERP-Entwickler spezialisiert und komplexe technische
+                        Herausforderungen gelöst. Ich strebe kontinuierlich danach, neue Technologien zu erlernen und
+                        arbeite gerne in multidisziplinären Teams.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Jahre Erfahrung</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4+</h3>
+                        <p>Fachkurse absolviert</p>
+                    </div>
+                    <div class="stat">
+                        <h3>8+</h3>
+                        <p>Technologien beherrscht</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berufserfahrung -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Berufserfahrung</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">09/2022 – laufend</span>
+                            <h3>Corporate IT Software Developer</h3>
+                        </div>
+                        <p class="timeline-company">Gabriel-Chemie, Gumpoldskirchen</p>
+                        <p class="timeline-description">Corporate Software Development und Unternehmenslösungen</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Automatisierungstechniker</h3>
+                            <span class="timeline-date">01/2020 – 09/2022</span>
+                        </div>
+                        <p class="timeline-company">Bühler, Leobendorf</p>
+                        <p class="timeline-description">Software Engineering und Automatisierungslösungen</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Softwaretechniker</h3>
+                            <span class="timeline-date">04/2018 – 01/2020</span>
+                        </div>
+                        <p class="timeline-company">SEP-Automation, Hornstein</p>
+                        <p class="timeline-description">Software Engineering und Systemintegration</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Elektroanlagentechniker</h3>
+                            <span class="timeline-date">07/2014 – 04/2018</span>
+                        </div>
+                        <p class="timeline-company">FHW Franz Haas Waffelmaschinen, Leobendorf</p>
+                        <p class="timeline-description">Interne Inbetriebnahme und Automatisierung</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Veranstaltungstechniker</h3>
+                            <span class="timeline-date">07/2013 – 12/2017</span>
+                        </div>
+                        <p class="timeline-company">Selbstständige Tätigkeit</p>
+                        <p class="timeline-description">Veranstaltungstechnik und technische Projektleitung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projekte & Technologien -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Technologien & Projekte</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-image project-1"></div>
+                    <h3>Software Engineering</h3>
+                    <p>Entwicklung in C/C++, Python und Progress OpenEdge ABL für ERP Anwendung.</p>
+                    <div class="project-tags">
+                        <span>C/C++</span>
+                        <span>C#</span>
+                        <span>Python</span>
+                        <span>Progress ABL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image project-2"></div>
+                    <h3>Skripting</h3>
+                    <p>Automatisierung und Verwaltung mit PowerShell und Bash Scripting.</p>
+                    <div class="project-tags">
+                        <span>PowerShell</span>
+                        <span>Bash</span>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-image project-3"></div>
+                    <h3>DevOps & Cloud</h3>
+                    <p>Azure DevOps, Versionskontrolle und Deployment mit modernen Tools.</p>
+                    <div class="project-tags">
+                        <span>Azure DevOps</span>
+                        <span>Git</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-4"></div>
+                    <h3>Siemens Automation</h3>
+                    <p>Systemintegration und Programmierung mit Siemens TIA Portal und Simotion.</p>
+                    <div class="project-tags">
+                        <span>TIA Portal</span>
+                        <span>Simotion</span>
+                        <span>SINAMICS S120</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-5"></div>
+                    <h3>Roboterprogrammierung</h3>
+                    <p>Programmierung und Inbetriebnahme von Industrierobotern verschiedener Hersteller.</p>
+                    <div class="project-tags">
+                        <span>KUKA</span>
+                        <span>Fanuc</span>
+                        <span>ABB</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-6"></div>
+                    <h3>Rockwell Automation</h3>
+                    <p>Programmierung mit Rockwell Studio 5000 und PLCLogix für komplexe Automationslösungen.</p>
+                    <div class="project-tags">
+                        <span>Studio 5000</span>
+                        <span>Logix</span>
+                        <span>Kinetix Drives</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-7"></div>
+                    <h3>Mitsubishi Automation</h3>
+                    <p>Programmierung und Inbetriebnahme mit Mitsubishi GX Works 3 und Frequenzumrichtern.</p>
+                    <div class="project-tags">
+                        <span>GX Works 3</span>
+                        <span>Frequenzumrichter</span>
+                        <span>PLC</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Aktuell am Lernen -->
+    <section id="learning" class="learning">
+        <div class="container">
+            <h2>Aktuell am Lernen</h2>
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <div class="learning-icon">🔐</div>
+                    <h3>Cybersecurity in OT/IT</h3>
+                    <p>Sicherheit in Operational Technology und Netzwerk-Schutz für Industrieanwendungen.</p>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-icon">📊</div>
+                    <h3>Data Science & Analytics</h3>
+                    <p>Datenanalyse und Visualisierung für Produktionsdaten und Business Intelligence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HomeLab -->
+    <section id="homelab" class="homelab">
+        <div class="container">
+            <h2>Mein HomeLab Setup</h2>
+            <div class="homelab-intro">
+                <p>In meinem HomeLab experimentiere ich mit neuen Technologien, teste komplexe Automatisierungslösungen
+                    und entwickle innovative Projekte. Ein Sandbox für kontinuierliches Lernen und Prototyping.</p>
+            </div>
+            <div class="homelab-grid">
+                <div class="homelab-card">
+                    <h3>Virtualisierung & Server</h3>
+                    <ul class="homelab-list">
+                        <li>Proxmox VE für VM und Container-Management</li>
+                        <li>Docker für Containerisierung</li>
+                        <li>KVM und ESXi für virtuelle Infrastruktur</li>
+                        <li>Nextcloud für private Cloud-Lösung</li>
+                        <li>TrueNAS für die Speicher Verwaltung</li>
+                    </ul>
+                </div>
+
+                <div class="homelab-card">
+                    <h3>Automatisierung & IIoT</h3>
+                    <ul class="homelab-list">
+                        <li>Raspberry Pi für IoT und Edge Computing</li>
+                        <li>Arduino Microcontroller für Sensor-Integration</li>
+                        <li>MQTT Broker für Geräte-Kommunikation</li>
+                    </ul>
+                </div>
+
+                <div class="homelab-card">
+                    <h3>Netzwerk & Sicherheit</h3>
+                    <ul class="homelab-list">
+                        <li>Wireguard VPN für sicheren Zugriff</li>
+                        <li>DNS-Level Blocking mit AdGuard</li>
+                        <li>Netzwerk Monitoring und Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="homelab-card">
+                    <h3>Datenbank & Storage</h3>
+                    <ul class="homelab-list">
+                        <li>PostgreSQL und MongoDB für Datenmanagement</li>
+                        <li>Redis aktell nur experimentel</li>
+                    </ul>
+                </div>
+
+                <div class="homelab-card">
+                    <h3>3D Druck & Hardware</h3>
+                    <ul class="homelab-list">
+                        <li>3D Drucker <i>(FDM & SLA)</i> für Prototyping</li>
+                        <li>Hobby-Elektronik und Bastelprojekte</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Meine Kompetenzen</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Automation & SPS</h3>
+                    <div class="skill-list">
+                        <div class="skill-bar">
+                            <span>Siemens TIA Portal</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Rockwell Studio 5000</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Mitsubishi GX Works</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Roboterprogrammierung (KUKA/Fanuc/ABB)</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programmiersprachen</h3>
+                    <div class="skill-list">
+                        <div class="skill-bar">
+                            <span>C/C++</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>C#</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Python</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Progress OpenEdge ABL</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>SQL / PowerShell</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>HTML/CSS</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>JavaScript</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & DevOps</h3>
+                    <div class="skill-list">
+                        <div class="skill-bar">
+                            <span>Azure DevOps</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Git / GitHub</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Docker</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>Microsoft Office</span>
+                            <div class="progress">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Lass uns zusammenarbeiten!</h3>
+                    <p>Du hast ein interessantes Projekt oder eine Anfrage? Gerne höre ich von dir!</p>
+                    <div class="contact-details">
+                        <p><strong>Email:</strong> <a href="mailto:[EMAIL]">[EMAIL]</a></p>
+                        <p><strong>Telefon:</strong> <a href="tel:[TELNR]">[TELNR]</a></p>
+                        <p><strong>Ort:</strong> Heiligeneich, Österreich</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Berrny2311" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://www.linkedin.com/in/bernhard-antl-97434b365/" target="_blank"
+                            class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Dein Name" required>
+                    <input type="email" placeholder="Deine Email" required>
+                    <textarea placeholder="Deine Nachricht" rows="5" required></textarea>
+                    <button type="submit" class="submit-button">Nachricht senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <YEAR> Bernhard Antl. Alle Rechte vorbehalten.</p>
+            <p>Erstellt mit HTML, CSS und JavaScript</p>
+            <p>try the console :D</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
