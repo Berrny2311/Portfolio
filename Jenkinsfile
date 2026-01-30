@@ -47,7 +47,7 @@ pipeline {
 
         stage('Deploy to Nginx') {
             steps {
-                sshAgent(['nginx-server-ssh']) {
+                sshagent(['nginx-server-ssh']) {
                     // rsync mit mehreren Excludes für Scripts und Git-Daten
                     sh """
                         rsync -avz -e 'ssh -o StrictHostKeyChecking=no' \
