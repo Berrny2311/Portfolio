@@ -27,23 +27,34 @@ pipeline {
                 checkout scm
             }
         }
-        /*
+        
         stage('Replace Variables') {
             steps {
                 script {
                     // Extrahiert "v1.0.0" aus "refs/tags/v1.0.0"
                     def cleanVersion = TAG_NAME.replace('refs/tags/', '')
                     def buildDate = new Date().format('dd.MM.yyyy HH:mm')
+                    def buildYear = new Date().format('yyyy')
+                    
+                     // Properties aus der Datei auf dem Server laden
+                     def props = readProperties file: env.CONFIG_FILE
+                     def mail = props['EMAIL']
+                     def tel = props['TELNR']
 
+       
                     // Platzhalter im HTML ersetzen (z.B. index.html)
                     sh "sed -i 's/{{VERSION}}/${cleanVersion}/g' index.html"
-                    sh "sed -i 's/{{BUILD_DATE}}/${buildDate}/g' index.html"
+                    sh "sed -i 's/{{EMAIL}}/${mail}/g' index.html"
+                    sh "sed -i 's/{{TELNR}}/${tel}/g' index.html"
+                     sh "sed -i 's/{{YEAR}}/${buildYear}/g' index.html"
+
+                    //sh "sed -i 's/{{BUILD_DATE}}/${buildDate}/g' index.html"
                     
                     echo "Version ${cleanVersion} in HTML geschrieben."
                 }
             }
         }
-        */
+        
 
         stage('Deploy to Nginx') {
             steps {
