@@ -7,7 +7,7 @@ pipeline {
     }
 
     triggers {
-        genericTrigger(
+        GenericTrigger(
             genericVariables: [
                 [key: 'TAG_NAME', value: '$.ref']
             ],
@@ -27,7 +27,7 @@ pipeline {
                 checkout scm
             }
         }
-
+        /*
         stage('Replace Variables') {
             steps {
                 script {
@@ -43,14 +43,32 @@ pipeline {
                 }
             }
         }
+        */
 
         stage('Deploy to Nginx') {
             steps {
                 sshAgent(['nginx-server-ssh']) {
-                    // Kopiert die Dateien per SCP auf den Linux Server
-                    sh "scp -o StrictHostKeyChecking=no index.html ${SSH_TARGET}:${TARGET_DIR}"
+                    // rsync mit mehreren Excludes für Scripts und Git-Daten
+                    sh """
+                        rsync -avz -e 'ssh -o StrictHostKeyChecking=no' \
+                        --exclude='.git*' \
+                        --exclude='*.cmd' \
+                        --exclude='*.ps1' \
+                        --exclude='*.sh' \
+                        --exclude='Jenkinsfile' \
+                        . ${SSH_TARGET}:${TARGET_DIR}
+                    """
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Deployment erfolgreich abgeschlossen!'
+        }
+        failure {
+            echo 'Deployment fehlgeschlagen!'
         }
     }
 }
