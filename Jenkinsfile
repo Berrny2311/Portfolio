@@ -28,40 +28,47 @@ pipeline {
             }
         }
         
-        stage('Replace Variables') {
-            steps {
-                script {
-                    // 1. Version sicher extrahieren
-                    def rawTag = env.TAG_NAME ?: 'v0.0.0'
-                    def cleanVersion = rawTag.replace('refs/tags/', '')
-                    def buildYear = new Date().format('yyyy')
-                    
-                    // 2. Properties laden (Stelle sicher, dass die Datei im Git existiert!)
-                    // Wenn die Datei 'config.properties' heißt:
-                    def props = readProperties file: 'config.properties'
-                    def mail = props['EMAIL']
-                    def tel = props['TELNR']
+    stage('Replace Variables') {
+        steps {
+            script {
+                /*
+                   Die Konfigurationsdatei "config.properties" liegt auf dem Jenkins-Server
+                   unter dem Pfad "/var/lib/jenkins/my-configs/config.properties".
+                */
 
-                    // Werte im Jenkins-Log ausgeben
-                    echo "--- Geladene Konfiguration ---"
-                    echo "E-Mail: ${mail}"
-                    echo "Telefon: ${tel}"
-                    echo "Version: ${cleanVersion}"
-                    echo "Baujahr: ${buildYear}"
-                    echo "------------------------------"
+                // Pfad zur Datei auf deinem Jenkins-Server
+                def serverConfigPath = "/var/lib/jenkins/my-configs/config.properties"
 
-                    // 3. Ersetzen
-                    sh """
-                        sed -i 's/{{VERSION}}/${cleanVersion}/g' index.html
-                        sed -i 's/{{EMAIL}}/${mail}/g' index.html
-                        sed -i 's/{{TELNR}}/${tel}/g' index.html
-                        sed -i 's/{{YEAR}}/${buildYear}/g' index.html
-                    """
-                    
-                    echo "Version ${cleanVersion} und Kontaktdaten erfolgreich gesetzt."
-                }
+                // Datei in den aktuellen Workspace kopieren
+                sh "cp ${serverConfigPath} ."
+
+                // Jetzt kann readProperties die Datei im Workspace finden
+                def props = readProperties file: 'config.properties'
+                def mail = props['EMAIL']
+                def tel = props['TELNR']
+
+                echo "--- Geladene Konfiguration vom Server ---"
+                echo "E-Mail: ${mail}"
+                echo "Telefon: ${tel}"
+                echo "-----------------------------------------"
+
+                // Variablen im HTML ersetzen
+                def rawTag = env.TAG_NAME ?: 'v0.0.0'
+                def cleanVersion = rawTag.replace('refs/tags/', '')
+                def buildYear = new Date().format('yyyy')
+
+                sh """
+                    sed -i 's/{{VERSION}}/${cleanVersion}/g' index.html
+                    sed -i 's/{{EMAIL}}/${mail}/g' index.html
+                    sed -i 's/{{TELNR}}/${tel}/g' index.html
+                    sed -i 's/{{YEAR}}/${buildYear}/g' index.html
+                """
+                
+                // Optional: Datei wieder aus dem Workspace löschen, damit sie nicht mit-deployed wird
+                sh "rm config.properties"
             }
         }
+    }
         
 
         stage('Deploy to Nginx') {
