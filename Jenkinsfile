@@ -42,6 +42,14 @@ pipeline {
                     def mail = props['EMAIL']
                     def tel = props['TELNR']
 
+                    // Werte im Jenkins-Log ausgeben
+                    echo "--- Geladene Konfiguration ---"
+                    echo "E-Mail: ${mail}"
+                    echo "Telefon: ${tel}"
+                    echo "Version: ${cleanVersion}"
+                    echo "Baujahr: ${buildYear}"
+                    echo "------------------------------"
+
                     // 3. Ersetzen
                     sh """
                         sed -i 's/{{VERSION}}/${cleanVersion}/g' index.html
