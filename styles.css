@@ -844,6 +844,8 @@ body {
 
 .social-links {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
 }
@@ -856,6 +858,7 @@ body {
     text-decoration: none;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    align-items: center;
 }
 
 .social-link:hover {
